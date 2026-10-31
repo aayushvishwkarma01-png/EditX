@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EditX — AI Video Creator</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">X</span><span>Edit<span class="accent">X</span><small>AI VIDEO CREATOR</small></span></a>
+    <span class="top-pill"><i></i> CREATIVE STUDIO</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">YOUR VIDEO. REIMAGINED.</div>
+      <h1>Make videos that<br><span>move people.</span></h1>
+      <p>Upload a reference, add your own clips, and create a polished video in a few clicks.</p>
+    </section>
+
+    <form id="editForm" class="workspace">
+      <section class="panel">
+        <div class="step"><span>01</span><div><h2>Reference video</h2><p>Upload the edited video whose style you want to follow.</p></div></div>
+        <label class="dropzone" for="reference">
+          <input id="reference" name="reference" type="file" accept="video/*" required>
+          <span class="upload-icon">↑</span><strong>Choose reference video</strong>
+          <small>MP4, MOV or WEBM</small><em id="referenceName">No file selected</em>
+        </label>
+      </section>
+
+      <section class="panel">
+        <div class="step"><span>02</span><div><h2>Your video clips</h2><p>Add the footage you want to use. Clips are assembled in upload order.</p></div></div>
+        <label class="dropzone" for="clips">
+          <input id="clips" name="clips" type="file" accept="video/*" multiple required>
+          <span class="upload-icon">＋</span><strong>Add video clips</strong>
+          <small>Select one or more video files</small><em id="clipsName">No clips selected</em>
+        </label>
+      </section>
+
+      <section class="panel">
+        <div class="step"><span>03</span><div><h2>Soundtrack <small class="optional">OPTIONAL</small></h2><p>Add background music to your edit.</p></div></div>
+        <label class="music-row" for="music"><span class="music-icon">♫</span><span><b id="musicName">Choose music file</b><small>MP3, WAV, M4A</small></span><span class="browse">Browse</span><input id="music" name="music" type="file" accept="audio/*"></label>
+      </section>
+
+      <section class="panel settings">
+        <div class="step"><span>04</span><div><h2>Export settings</h2><p>Choose the format for your finished video.</p></div></div>
+        <div class="setting-grid">
+          <label>Aspect ratio<select name="aspect"><option value="9:16">9:16 · Reels / Shorts</option><option value="16:9">16:9 · YouTube</option><option value="1:1">1:1 · Square</option></select></label>
+          <label>Resolution<select name="resolution"><option value="720">720p · Faster</option><option value="1080">1080p · Full HD</option></select></label>
+        </div>
+      </section>
+
+      <div class="action-area">
+        <button id="createBtn" type="submit"><span>✦</span> Create my video <b>→</b></button>
+        <p id="status" role="status">Your files are processed by the EditX server for this render.</p>
+        <div id="progress" class="progress hidden"><span></span></div>
+        <a id="download" class="download hidden" href="#">↓ &nbsp; Download MP4</a>
+      </div>
+    </form>
+  </main>
+
+  <footer><span>© 2026 EditX · AI VIDEO CREATOR</span><span>Product: AyushVsk</span></footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
